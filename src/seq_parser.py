@@ -54,6 +54,9 @@ def sequence_parser(jelly_qlist, idx, assembly, kmerSize, output):
                     out.write(haplotype+'\t'+str(len(haplotype))+'\t'+name+'\t'+str(sort_index)+'\t'+'\t'.join(kmer_pres_prev_str)+'\n')
                     haplotype = None
 
+                    #Made the change here to reset the position of the index
+                    sort_index = int(seq_split[1])
+
             if kmer_pres is not None and haplotype is None:
                 haplotype = kmerF
                 sort_index += i
